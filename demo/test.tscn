@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b4lwivjy4vjne"]
+
+[ext_resource type="Script" uid="uid://beiboyhhrb8ny" path="res://addons/game_state_manager/scripts/game_management.gd" id="1_8gayr"]
+[ext_resource type="Script" uid="uid://dqoh5mpbkashn" path="res://addons/game_state_manager/scripts/startup.gd" id="1_gamli"]
+[ext_resource type="Script" uid="uid://cpr3wuv0d1jwd" path="res://addons/game_state_manager/scripts/scene_loader.gd" id="2_gj5nn"]
+
+[node name="GameManagement" type="Node" unique_id=894940207]
+script = ExtResource("1_8gayr")
+initial_scene = "res://demo/menu.tscn"
+
+[node name="SceneLoader" type="Node" parent="." unique_id=1046414928]
+script = ExtResource("2_gj5nn")
+
+[node name="CurrentScene" type="Node" parent="." unique_id=1028809531]
+
+[node name="Startup" type="Node" parent="." unique_id=10177851]
+script = ExtResource("1_gamli")

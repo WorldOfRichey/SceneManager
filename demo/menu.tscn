@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dwrlebtjvvm8"]
+
+[ext_resource type="Script" uid="uid://hcw0ijn4rjx3" path="res://demo/menu.gd" id="1_wq4q4"]
+
+[node name="Control" type="Control" unique_id=123030954]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wq4q4")
+
+[node name="Button" type="Button" parent="." unique_id=490965324]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 58.0
+offset_right = 253.0
+offset_bottom = 115.0
+
+[node name="Label" type="Label" parent="Button" unique_id=1725053089]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Load Scene 2 (quick)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=1551520166]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 16.0
+offset_right = 151.0
+offset_bottom = 46.0
+text = "Scene 1"
+
+[connection signal="pressed" from="Button" to="." method="_on_button1_pressed"]

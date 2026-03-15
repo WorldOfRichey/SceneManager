@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="GameStateManager"
+run/main_scene="uid://b4lwivjy4vjne"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://vr5gg64dhnw0"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/game_state_manager/plugin.cfg")
 
 [physics]
 
