@@ -14,3 +14,5 @@ script = ExtResource("2_l04md")
 
 [node name="Startup" type="Node" parent="." unique_id=10177851]
 script = ExtResource("3_xsb8a")
+
+[node name="Transitions" type="Node" parent="." unique_id=434719897]

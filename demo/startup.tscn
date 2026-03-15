@@ -1,6 +1,27 @@
 [gd_scene format=3 uid="uid://c7x0epbdikeo3"]
 
 [ext_resource type="PackedScene" uid="uid://883nr4ru12h6" path="res://addons/game_state_manager/scenes/game_management.tscn" id="1_u32w6"]
+[ext_resource type="Script" uid="uid://cd68rh5xhn4fq" path="res://demo/fade_transition.gd" id="2_7si18"]
 
 [node name="GameManagement" unique_id=894940207 instance=ExtResource("1_u32w6")]
 initial_scene = "res://demo/menu.tscn"
+
+[node name="FadeTransition" type="Control" parent="Transitions" parent_id_path=PackedInt32Array(434719897) index="0" unique_id=234796323]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_7si18")
+
+[node name="ColorRect" type="ColorRect" parent="Transitions/FadeTransition" index="0" unique_id=1767623320]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
