@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c7x0epbdikeo3"]
+
+[ext_resource type="PackedScene" uid="uid://883nr4ru12h6" path="res://addons/game_state_manager/scenes/game_management.tscn" id="1_u32w6"]
+
+[node name="GameManagement" unique_id=894940207 instance=ExtResource("1_u32w6")]
+initial_scene = "res://demo/menu.tscn"
