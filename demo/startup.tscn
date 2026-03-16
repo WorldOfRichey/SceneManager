@@ -19,12 +19,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Pause/SimplePause/Control" index="0" unique_id=1410557041]
-visible = false
+[node name="ColorRect" type="ColorRect" parent="Pause/SimplePause/Control" index="0" unique_id=1826142]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 155.0
+offset_top = 81.0
+offset_right = 781.0
+offset_bottom = 386.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Pause/SimplePause/Control/ColorRect" index="0" unique_id=1410557041]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 19.0
+offset_right = 433.0
+offset_bottom = 70.0
 text = "Pause"
+
+[node name="Button" type="Button" parent="Pause/SimplePause/Control/ColorRect" index="1" unique_id=1592467421]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 126.0
+offset_right = 428.0
+offset_bottom = 180.0
+text = "Go"
 
 [node name="FadeTransition" type="Control" parent="Transitions" parent_id_path=PackedInt32Array(434719897) index="0" unique_id=234796323]
 layout_mode = 3
@@ -45,3 +62,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="Pause/SimplePause/Control/ColorRect/Button" to="Pause/SimplePause" method="on_resume_clicked"]
