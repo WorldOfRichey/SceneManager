@@ -10,6 +10,7 @@ script = ExtResource("1_7trmr")
 [node name="CurrentScene" type="Node" parent="." unique_id=1028809531]
 
 [node name="Pause" type="Node" parent="." unique_id=1127102330]
+process_mode = 3
 
 [node name="Transitions" type="Node" parent="." unique_id=434719897]
 

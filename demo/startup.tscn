@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://883nr4ru12h6" path="res://addons/game_state_manager/scenes/game_management.tscn" id="1_u32w6"]
 [ext_resource type="Script" uid="uid://cd68rh5xhn4fq" path="res://demo/fade_transition.gd" id="2_7si18"]
 [ext_resource type="Script" uid="uid://dtgvuhau8s048" path="res://demo/simple_pause_screen.gd" id="2_tna0j"]
+[ext_resource type="Script" uid="uid://dllkim51eebfk" path="res://demo/demo_counter.gd" id="3_vc6ln"]
 
 [node name="GameManagment" unique_id=894940207 instance=ExtResource("1_u32w6")]
 initial_scene = "res://demo/menu.tscn"
@@ -42,6 +43,15 @@ offset_top = 126.0
 offset_right = 428.0
 offset_bottom = 180.0
 text = "Go"
+
+[node name="CountTest" type="Label" parent="Pause/SimplePause/Control/ColorRect" index="2" unique_id=86516877]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 257.0
+offset_right = 69.0
+offset_bottom = 280.0
+text = "0"
+script = ExtResource("3_vc6ln")
 
 [node name="FadeTransition" type="Control" parent="Transitions" parent_id_path=PackedInt32Array(434719897) index="0" unique_id=234796323]
 layout_mode = 3

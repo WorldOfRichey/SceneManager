@@ -38,6 +38,9 @@ func pause_game(node_name : String) -> void :
 	current_pause_screen = get_pause_screen(node_name)
 	current_pause_screen._show_pause_screen()
 	
+	#stop the tree
+	get_tree().paused = true
+	
 	#Change the game state
 	change_game_manager_state(GameManagerStates.PAUSED)
 	
@@ -45,7 +48,10 @@ func resume_game() -> void :
 	#Is we are not paused return
 	if current_state != GameManagerStates.PAUSED:
 		return
-		
+	
+	#Resume the tree
+	get_tree().paused = false
+	
 	#Hide the ui and change the game state
 	current_pause_screen._hide_pause_screen()
 	change_game_manager_state(GameManagerStates.PLAYING)

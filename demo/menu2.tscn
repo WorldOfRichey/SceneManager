@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bocpcn7b8boic"]
 
 [ext_resource type="Script" uid="uid://hcw0ijn4rjx3" path="res://demo/menu.gd" id="1_8mjln"]
+[ext_resource type="Script" uid="uid://dllkim51eebfk" path="res://demo/demo_counter.gd" id="2_7ujdq"]
 
 [node name="Control" type="Control" unique_id=753821150]
 layout_mode = 3
@@ -35,11 +36,11 @@ text = "Load Scene 1 (trans)"
 layout_mode = 2
 text = "Pause Game"
 
-[node name="ResumeGame" type="Button" parent="VBoxContainer" unique_id=904345877]
+[node name="DemoCounter" type="Label" parent="VBoxContainer" unique_id=544703303]
 layout_mode = 2
-text = "Resume Game"
+text = "0"
+script = ExtResource("2_7ujdq")
 
 [connection signal="pressed" from="VBoxContainer/LoadScene1Quick" to="." method="load_scene_one_quick"]
 [connection signal="pressed" from="VBoxContainer/LoadScene1Trans" to="." method="load_scene_one_trans"]
 [connection signal="pressed" from="VBoxContainer/PauseGame" to="." method="pause_game"]
-[connection signal="pressed" from="VBoxContainer/ResumeGame" to="." method="resume_game"]
