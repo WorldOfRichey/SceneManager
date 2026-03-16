@@ -31,5 +31,15 @@ text = "Load Scene 1 (quick load)"
 layout_mode = 2
 text = "Load Scene 1 (trans)"
 
+[node name="PauseGame" type="Button" parent="VBoxContainer" unique_id=1713905735]
+layout_mode = 2
+text = "Pause Game"
+
+[node name="ResumeGame" type="Button" parent="VBoxContainer" unique_id=904345877]
+layout_mode = 2
+text = "Resume Game"
+
 [connection signal="pressed" from="VBoxContainer/LoadScene1Quick" to="." method="load_scene_one_quick"]
 [connection signal="pressed" from="VBoxContainer/LoadScene1Trans" to="." method="load_scene_one_trans"]
+[connection signal="pressed" from="VBoxContainer/PauseGame" to="." method="pause_game"]
+[connection signal="pressed" from="VBoxContainer/ResumeGame" to="." method="resume_game"]
