@@ -10,4 +10,4 @@ func start_tween() -> void :
 	tween.play()
 	
 func tween_method(v : float) -> void :
-	text = "%f" % v
+	text = "tween value = %f" % v
