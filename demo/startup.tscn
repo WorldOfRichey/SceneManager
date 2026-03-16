@@ -2,9 +2,29 @@
 
 [ext_resource type="PackedScene" uid="uid://883nr4ru12h6" path="res://addons/game_state_manager/scenes/game_management.tscn" id="1_u32w6"]
 [ext_resource type="Script" uid="uid://cd68rh5xhn4fq" path="res://demo/fade_transition.gd" id="2_7si18"]
+[ext_resource type="Script" uid="uid://dtgvuhau8s048" path="res://demo/simple_pause_screen.gd" id="2_tna0j"]
 
 [node name="GameManagment" unique_id=894940207 instance=ExtResource("1_u32w6")]
 initial_scene = "res://demo/menu.tscn"
+
+[node name="SimplePause" type="Node" parent="Pause" parent_id_path=PackedInt32Array(1127102330) index="0" unique_id=826419580]
+script = ExtResource("2_tna0j")
+
+[node name="Control" type="Control" parent="Pause/SimplePause" index="0" unique_id=703153438]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Pause/SimplePause/Control" index="0" unique_id=1410557041]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Pause"
 
 [node name="FadeTransition" type="Control" parent="Transitions" parent_id_path=PackedInt32Array(434719897) index="0" unique_id=234796323]
 layout_mode = 3
