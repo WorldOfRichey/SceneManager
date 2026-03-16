@@ -11,49 +11,25 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wq4q4")
 
-[node name="Button" type="Button" parent="." unique_id=490965324]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 58.0
-offset_right = 253.0
-offset_bottom = 115.0
-
-[node name="Label" type="Label" parent="Button" unique_id=1725053089]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=118997216]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Load Scene 2 (quick)"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Label" type="Label" parent="." unique_id=1551520166]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 16.0
-offset_right = 151.0
-offset_bottom = 46.0
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1485383775]
+layout_mode = 2
 text = "Scene 1"
 
-[node name="Button2" type="Button" parent="." unique_id=1211003652]
-layout_mode = 0
-offset_left = 22.0
-offset_top = 128.0
-offset_right = 252.0
-offset_bottom = 195.0
+[node name="LoadScene2Quick" type="Button" parent="VBoxContainer" unique_id=825010813]
+layout_mode = 2
+text = "Load scene 2 (quick)"
 
-[node name="Label" type="Label" parent="Button2" unique_id=185638993]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Load Scene 2 (transition)"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="LoadScene2Trans" type="Button" parent="VBoxContainer" unique_id=1493549825]
+layout_mode = 2
+text = "Load scene 2 (trans)"
 
-[connection signal="pressed" from="Button" to="." method="_on_button1_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_load_scene_2_trans_pressed"]
+[connection signal="pressed" from="VBoxContainer/LoadScene2Quick" to="." method="load_scene_two_quick"]
+[connection signal="pressed" from="VBoxContainer/LoadScene2Trans" to="." method="load_scene_two_trans"]

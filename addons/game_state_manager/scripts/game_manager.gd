@@ -4,6 +4,7 @@ extends Node
 @onready var current_scene_node : Node = get_node("/root/GameManagment/CurrentScene")
 @onready var transitions_node : Node = get_node("/root/GameManagment/Transitions")
 @onready var game_manager_settings : GameManagerSettings = get_node("/root/GameManagment")
+@onready var pause_node : Node = get_node("/root/GameManagment/Pause")
 
 signal signal_on_game_manager_state_changed
 
@@ -23,3 +24,9 @@ func change_game_manager_state(new_state : GameManagerStates) -> void :
 
 func get_transitions_node(node_name : String) -> Node :
 	return transitions_node.get_node(node_name)
+
+func pause_game() -> void :
+	print ("pause game")
+	
+func resume_game() -> void :
+	print ("resume game")
