@@ -20,7 +20,7 @@ func load_scene_quick_defered(path : String) -> void :
 	#Load the new scene and add the child into the scene
 	var s = ResourceLoader.load(path)
 	current_scene = s.instantiate()
-	GameManager.game_management.current_scene_node.add_child(current_scene)
+	GameManager.current_scene_node.add_child(current_scene)
 	
 #Call to add a scene with a scene transition. 
 #The screne transition covers the screen, the new scene is loaded 
@@ -28,7 +28,7 @@ func load_scene_quick_defered(path : String) -> void :
 func load_scene_with_transition(scene_path : String, transition_name : String) -> void :
 	#Store variables
 	next_scene_path = scene_path
-	scene_transition = GameManager.game_management.get_transitions_node(transition_name)
+	scene_transition = GameManager.get_transitions_node(transition_name)
 	
 	#Begin the in transition and wait for a signal it has ended.
 	scene_transition.signal_in_transition_ended.connect(transition_in_completed)
@@ -55,7 +55,7 @@ func begin_threaded_load_defered() -> void :
 func add_thread_loaded_scene_defered(node : Node) -> void :
 	#set the current scene and add it to the tree
 	current_scene = node
-	GameManager.game_management.current_scene_node.add_child(current_scene)
+	GameManager.current_scene_node.add_child(current_scene)
 	
 	#begin the transition out and wait for a signal it is complete.
 	scene_transition.signal_out_transition_ended.connect(transition_out_completed)

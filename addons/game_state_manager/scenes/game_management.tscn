@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://883nr4ru12h6"]
 
-[ext_resource type="Script" uid="uid://beiboyhhrb8ny" path="res://addons/game_state_manager/scripts/game_management.gd" id="1_7trmr"]
+[ext_resource type="Script" uid="uid://beiboyhhrb8ny" path="res://addons/game_state_manager/scripts/game_manager_settings.gd" id="1_7trmr"]
 [ext_resource type="Script" uid="uid://cpr3wuv0d1jwd" path="res://addons/game_state_manager/scripts/scene_loader.gd" id="2_l04md"]
 [ext_resource type="Script" uid="uid://dqoh5mpbkashn" path="res://addons/game_state_manager/scripts/startup.gd" id="3_xsb8a"]
 
-[node name="GameManagement" type="Node" unique_id=894940207]
+[node name="GameManagment" type="Node" unique_id=894940207]
 script = ExtResource("1_7trmr")
 
 [node name="SceneLoader" type="Node" parent="." unique_id=1046414928]
