@@ -2,9 +2,56 @@
 
 [ext_resource type="PackedScene" uid="uid://883nr4ru12h6" path="res://addons/game_state_manager/scenes/game_management.tscn" id="1_u32w6"]
 [ext_resource type="Script" uid="uid://cd68rh5xhn4fq" path="res://demo/fade_transition.gd" id="2_7si18"]
+[ext_resource type="Script" uid="uid://dtgvuhau8s048" path="res://demo/simple_pause_screen.gd" id="2_tna0j"]
+[ext_resource type="Script" uid="uid://dllkim51eebfk" path="res://demo/demo_counter.gd" id="3_vc6ln"]
 
 [node name="GameManagment" unique_id=894940207 instance=ExtResource("1_u32w6")]
 initial_scene = "res://demo/menu.tscn"
+
+[node name="SimplePause" type="Node" parent="Pause" parent_id_path=PackedInt32Array(1127102330) index="0" unique_id=826419580]
+script = ExtResource("2_tna0j")
+
+[node name="Control" type="Control" parent="Pause/SimplePause" index="0" unique_id=703153438]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Pause/SimplePause/Control" index="0" unique_id=1826142]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 81.0
+offset_right = 781.0
+offset_bottom = 386.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Pause/SimplePause/Control/ColorRect" index="0" unique_id=1410557041]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 19.0
+offset_right = 433.0
+offset_bottom = 70.0
+text = "Pause"
+
+[node name="Button" type="Button" parent="Pause/SimplePause/Control/ColorRect" index="1" unique_id=1592467421]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 126.0
+offset_right = 428.0
+offset_bottom = 180.0
+text = "Go"
+
+[node name="CountTest" type="Label" parent="Pause/SimplePause/Control/ColorRect" index="2" unique_id=86516877]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 257.0
+offset_right = 69.0
+offset_bottom = 280.0
+text = "0"
+script = ExtResource("3_vc6ln")
 
 [node name="FadeTransition" type="Control" parent="Transitions" parent_id_path=PackedInt32Array(434719897) index="0" unique_id=234796323]
 layout_mode = 3
@@ -25,3 +72,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="Pause/SimplePause/Control/ColorRect/Button" to="Pause/SimplePause" method="on_resume_clicked"]

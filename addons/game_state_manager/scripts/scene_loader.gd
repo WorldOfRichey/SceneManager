@@ -8,7 +8,7 @@ var scene_transition : SceneTransition = null
 var next_scene_path : String
 var scene_loading : bool = false
 
-#Call to load a scene with no transition.
+#Call to load a scene with no transition and no change of game state
 func load_scene_quick(path : String) -> void :
 	load_scene_quick_defered.call_deferred(path)
 	
@@ -22,7 +22,7 @@ func load_scene_quick_defered(path : String) -> void :
 	current_scene = s.instantiate()
 	GameManager.current_scene_node.add_child(current_scene)
 	
-#Call to add a scene with a scene transition. 
+#Call to add a scene with a scene transition.
 #The screne transition covers the screen, the new scene is loaded 
 #And the scene transition reveals the screen.
 func load_scene_with_transition(scene_path : String, transition_name : String) -> void :
@@ -33,10 +33,16 @@ func load_scene_with_transition(scene_path : String, transition_name : String) -
 	#Begin the in transition and wait for a signal it has ended.
 	scene_transition.signal_in_transition_ended.connect(transition_in_completed)
 	scene_transition._trigger_transition_in()
+	
+	#Set the state to transitioning
+	GameManager.change_game_manager_state(GameManager.GameManagerStates.TRANSITION_IN)
 
 #Called from the transition in, when it is completed. We can now
 #load the next screne.
 func transition_in_completed() -> void :
+	#Set the state to loading
+	GameManager.change_game_manager_state(GameManager.GameManagerStates.LOADING)
+	
 	scene_transition.signal_in_transition_ended.disconnect(transition_in_completed)
 	begin_threaded_load_defered.call_deferred()
 
@@ -61,9 +67,13 @@ func add_thread_loaded_scene_defered(node : Node) -> void :
 	scene_transition.signal_out_transition_ended.connect(transition_out_completed)
 	scene_transition._trigger_transition_out()
 	
+	#Change the game state to playing
+	GameManager.change_game_manager_state(GameManager.GameManagerStates.TRANSITION_OUT)
+	
 #Called when the transition is complete.
 func transition_out_completed() -> void :
 	scene_transition.signal_out_transition_ended.disconnect(transition_out_completed)
+	GameManager.change_game_manager_state(GameManager.GameManagerStates.PLAYING)
 
 #Called from the process thread.
 #Checks the status of the loading scene
