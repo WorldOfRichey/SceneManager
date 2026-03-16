@@ -7,7 +7,7 @@ extends Node
 
 signal signal_on_game_manager_state_changed
 
-enum GameManagerStates { PLAYING, PAUSED, LOADING }
+enum GameManagerStates { PLAYING, PAUSED, LOADING, TRANSITION_IN, TRANSITION_OUT }
 
 var current_state : GameManagerStates = GameManagerStates.PLAYING
 
