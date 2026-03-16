@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GameStateManager"
-run/main_scene="uid://b4lwivjy4vjne"
+run/main_scene="uid://c7x0epbdikeo3"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -37,4 +37,23 @@ offset_right = 151.0
 offset_bottom = 46.0
 text = "Scene 1"
 
+[node name="Button2" type="Button" parent="." unique_id=1211003652]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 128.0
+offset_right = 252.0
+offset_bottom = 195.0
+
+[node name="Label" type="Label" parent="Button2" unique_id=185638993]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Load Scene 2 (transition)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Button" to="." method="_on_button1_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_load_scene_2_trans_pressed"]
