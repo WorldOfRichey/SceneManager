@@ -1,16 +1,25 @@
 [gd_scene format=3 uid="uid://dajy8v36aj2k2"]
 
 [ext_resource type="Script" uid="uid://ciet3vnh5tqdg" path="res://demo/rotate.gd" id="1_050jo"]
+[ext_resource type="Script" uid="uid://ducppwrgidkb1" path="res://demo/tween.gd" id="2_881e1"]
 [ext_resource type="Script" uid="uid://c1bknpvjnkvws" path="res://demo/current_state_label.gd" id="3_881e1"]
 [ext_resource type="Script" uid="uid://csyntmdkh14kq" path="res://demo/scene1_menu.gd" id="3_pjhhy"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_axxny"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_pjhhy"]
+
 [node name="Node3D" type="Node3D" unique_id=182742395]
 
 [node name="RotatingCube" type="MeshInstance3D" parent="." unique_id=992702132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9148494, 0, 0)
 mesh = SubResource("BoxMesh_axxny")
 script = ExtResource("1_050jo")
+
+[node name="TweenCube" type="MeshInstance3D" parent="." unique_id=2040380903]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79069984, 0, 0)
+mesh = SubResource("BoxMesh_pjhhy")
+script = ExtResource("2_881e1")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1639868079]
 transform = Transform3D(1, 0, 0, 0, 0.94307184, 0.33258912, 0, -0.33258912, 0.94307184, 0, 1.1065818, 3.4536421)
