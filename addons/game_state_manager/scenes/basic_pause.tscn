@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://dnn44fhykt36d"]
+
+[ext_resource type="Script" uid="uid://ds6hqtap7lyco" path="res://addons/game_state_manager/scripts/basic_pause_control.gd" id="1_dnf5k"]
+[ext_resource type="StyleBox" uid="uid://cgakt7eiwqby1" path="res://addons/game_state_manager/resources/button_normal.tres" id="2_4tetd"]
+[ext_resource type="StyleBox" uid="uid://tat8sl4jwosi" path="res://addons/game_state_manager/resources/button_pressed.tres" id="3_1gp38"]
+[ext_resource type="StyleBox" uid="uid://ciinnaq2vuvx5" path="res://addons/game_state_manager/resources/button_hover.tres" id="4_e5cwf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fehbo"]
+bg_color = Color(0, 0, 0, 0.6117647)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="BasicPause" type="Node" unique_id=1019686895]
+script = ExtResource("1_dnf5k")
+
+[node name="Control" type="Control" parent="." unique_id=847686775]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="Control" unique_id=388579977]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -80.0
+offset_right = 200.0
+offset_bottom = 80.00037
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fehbo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel" unique_id=927943213]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer" unique_id=1924264717]
+layout_mode = 2
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Control/Panel/VBoxContainer" unique_id=173444858]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="Control/Panel/VBoxContainer" unique_id=1513648943]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("2_4tetd")
+theme_override_styles/pressed = ExtResource("3_1gp38")
+theme_override_styles/hover = ExtResource("4_e5cwf")
+text = "Resume"
+
+[node name="Quit" type="Button" parent="Control/Panel/VBoxContainer" unique_id=843803226]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("2_4tetd")
+theme_override_styles/pressed = ExtResource("3_1gp38")
+theme_override_styles/hover = ExtResource("4_e5cwf")
+text = "Quit"
+
+[connection signal="pressed" from="Control/Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Control/Panel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

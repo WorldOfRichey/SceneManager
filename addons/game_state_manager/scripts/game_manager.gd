@@ -8,7 +8,7 @@ extends Node
 
 signal signal_on_game_manager_state_changed
 
-enum GameManagerStates { PLAYING, PAUSED, LOADING, TRANSITION_IN, TRANSITION_OUT }
+enum GameManagerStates { PLAYING, PAUSED, LOADING, TRANSITION_IN, TRANSITION_OUT, QUITTING }
 
 var current_state : GameManagerStates = GameManagerStates.PLAYING
 var current_pause_screen : PauseScreen = null
@@ -55,3 +55,8 @@ func resume_game() -> void :
 	#Hide the ui and change the game state
 	current_pause_screen._hide_pause_screen()
 	change_game_manager_state(GameManagerStates.PLAYING)
+	
+func quit_game() -> void:
+	#notify subscribers
+	change_game_manager_state(GameManagerStates.QUITTING)
+	get_tree().quit()

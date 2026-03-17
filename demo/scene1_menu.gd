@@ -8,4 +8,4 @@ func _on_load_next_scene_quick_button_pressed():
 	GameManager.scene_loader.load_scene_quick("res://demo/scene2.tscn")
 
 func _on_pause_button_pressed():
-	GameManager.pause_game("SimplePause")
+	GameManager.pause_game("BasicPause")
