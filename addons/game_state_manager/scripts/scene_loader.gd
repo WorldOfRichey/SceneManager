@@ -4,6 +4,7 @@ extends Node
 signal signal_scene_loading
 
 var current_scene : Node = null
+var current_scene_name : String = ""
 var scene_transition : SceneTransition = null
 var next_scene_path : String
 var scene_loading : bool = false
@@ -16,6 +17,9 @@ func load_scene_quick_defered(path : String) -> void :
 	#Remove the current scene
 	if current_scene != null:
 		current_scene.queue_free()
+		
+	#Store the name
+	current_scene_name = path
 	
 	#Load the new scene and add the child into the scene
 	var s = ResourceLoader.load(path)
@@ -29,6 +33,7 @@ func load_scene_with_transition(scene_path : String, transition_name : String) -
 	#Store variables
 	next_scene_path = scene_path
 	scene_transition = GameManager.get_transitions_node(transition_name)
+	current_scene_name = scene_path
 	
 	#Begin the in transition and wait for a signal it has ended.
 	scene_transition.signal_in_transition_ended.connect(transition_in_completed)

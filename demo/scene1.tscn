@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dajy8v36aj2k2"]
+
+[ext_resource type="Script" uid="uid://ciet3vnh5tqdg" path="res://demo/rotate.gd" id="1_050jo"]
+[ext_resource type="Script" uid="uid://c1bknpvjnkvws" path="res://demo/current_state_label.gd" id="3_881e1"]
+[ext_resource type="Script" uid="uid://csyntmdkh14kq" path="res://demo/scene1_menu.gd" id="3_pjhhy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_axxny"]
+
+[node name="Node3D" type="Node3D" unique_id=182742395]
+
+[node name="RotatingCube" type="MeshInstance3D" parent="." unique_id=992702132]
+mesh = SubResource("BoxMesh_axxny")
+script = ExtResource("1_050jo")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1639868079]
+transform = Transform3D(1, 0, 0, 0, 0.94307184, 0.33258912, 0, -0.33258912, 0.94307184, 0, 1.1065818, 3.4536421)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1556142996]
+transform = Transform3D(0.9259299, 0.32954413, 0.18453847, -0.37769535, 0.80788594, 0.4524008, 0, -0.48859078, 0.87251306, 0, 3.0100431, 0)
+
+[node name="Menu" type="Control" parent="." unique_id=46262717]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_pjhhy")
+
+[node name="ColorRect" type="ColorRect" parent="Menu" unique_id=1719970354]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 34.0
+offset_right = 431.0
+offset_bottom = 304.0
+color = Color(0, 0, 0, 0.19607843)
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/ColorRect" unique_id=899723284]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -12.929993
+offset_bottom = -14.925003
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Menu/ColorRect/VBoxContainer" unique_id=1086705443]
+layout_mode = 2
+text = "Scene 1"
+horizontal_alignment = 1
+
+[node name="LoadNextSceneButton" type="Button" parent="Menu/ColorRect/VBoxContainer" unique_id=1412282928]
+layout_mode = 2
+text = "Load Next Scene (transition)"
+
+[node name="LoadNextSceneQuickButton" type="Button" parent="Menu/ColorRect/VBoxContainer" unique_id=1675753765]
+layout_mode = 2
+text = "Load Next Scene (quick)"
+
+[node name="PauseButton" type="Button" parent="Menu/ColorRect/VBoxContainer" unique_id=29611462]
+layout_mode = 2
+text = "Pause"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu/ColorRect/VBoxContainer" unique_id=1104935550]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Menu/ColorRect/VBoxContainer/HBoxContainer" unique_id=111221333]
+layout_mode = 2
+text = "Current State: "
+
+[node name="CurrentStateLabel" type="Label" parent="Menu/ColorRect/VBoxContainer/HBoxContainer" unique_id=1014226353]
+layout_mode = 2
+text = "Playing"
+script = ExtResource("3_881e1")
+
+[connection signal="pressed" from="Menu/ColorRect/VBoxContainer/LoadNextSceneButton" to="Menu" method="_on_load_next_scene_button_pressed"]
+[connection signal="pressed" from="Menu/ColorRect/VBoxContainer/LoadNextSceneQuickButton" to="Menu" method="_on_load_next_scene_quick_button_pressed"]
+[connection signal="pressed" from="Menu/ColorRect/VBoxContainer/PauseButton" to="Menu" method="_on_pause_button_pressed"]
