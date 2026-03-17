@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://diiifxcm6w1jt"]
+
+[ext_resource type="Script" uid="uid://bjl4pu7yn0nhm" path="res://addons/game_state_manager/scripts/fade_transition.gd" id="1_fuclg"]
+
+[node name="FadeTransition" type="Control" unique_id=940050338]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_fuclg")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=314208101]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
