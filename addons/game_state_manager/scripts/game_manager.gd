@@ -55,3 +55,6 @@ func resume_game() -> void :
 	#Hide the ui and change the game state
 	current_pause_screen._hide_pause_screen()
 	change_game_manager_state(GameManagerStates.PLAYING)
+	
+func quit_game() -> void:
+	print ("implement quit")
