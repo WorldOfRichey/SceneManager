@@ -1,70 +1,12 @@
 [gd_scene format=3 uid="uid://c7x0epbdikeo3"]
 
 [ext_resource type="PackedScene" uid="uid://883nr4ru12h6" path="res://addons/game_state_manager/scenes/game_management.tscn" id="1_u32w6"]
+[ext_resource type="PackedScene" uid="uid://diiifxcm6w1jt" path="res://addons/game_state_manager/scenes/fade_transition.tscn" id="3_tna0j"]
 [ext_resource type="PackedScene" uid="uid://dnn44fhykt36d" path="res://addons/game_state_manager/scenes/basic_pause.tscn" id="4_o2r6y"]
-
-[sub_resource type="GDScript" id="GDScript_7si18"]
-script/source = "extends SceneTransition
-
-@onready var color_rect : ColorRect = get_node(\"ColorRect\")
-
-var tween : Tween
-
-func scene_loaded_update(percentage : float ) -> void :
-	print (percentage)
-
-func _trigger_transition_in() -> void:
-	GameManager.scene_loader.signal_scene_loading.connect(scene_loaded_update)
-	color_rect.color = Color(0,0,0,0)
-	color_rect.visible = true
-	tween = create_tween()
-	tween.set_ease(Tween.EASE_IN)
-	tween.tween_property(color_rect, \"color\", Color(0,0,0,1), 0.5)
-	tween.tween_callback(trigger_transition_in_complete)
-	tween.play()
-	
-	super._trigger_transition_in()
-
-func trigger_transition_in_complete() -> void :
-	tween = null
-	self.signal_in_transition_ended.emit()
-
-func _trigger_transition_out() -> void:
-	tween = create_tween()
-	tween.set_ease(Tween.EASE_IN)
-	tween.tween_property(color_rect, \"color\", Color(0,0,0,0), 0.5)
-	tween.tween_callback(trigger_transition_out_complete)
-	tween.play()
-	super._trigger_transition_out()
-	
-func trigger_transition_out_complete() -> void :
-	tween = null
-	color_rect.visible = false
-	self.signal_out_transition_ended.emit()
-	GameManager.scene_loader.signal_scene_loading.disconnect(scene_loaded_update)
-"
 
 [node name="GameManagment" unique_id=894940207 instance=ExtResource("1_u32w6")]
 initial_scene = "res://demo/scene1.tscn"
 
 [node name="BasicPause" parent="Pause" parent_id_path=PackedInt32Array(1127102330) index="0" unique_id=1019686895 instance=ExtResource("4_o2r6y")]
 
-[node name="FadeTransition" type="Control" parent="Transitions" parent_id_path=PackedInt32Array(434719897) index="0" unique_id=234796323]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = SubResource("GDScript_7si18")
-
-[node name="ColorRect" type="ColorRect" parent="Transitions/FadeTransition" index="0" unique_id=1767623320]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
+[node name="FadeTransition" parent="Transitions" parent_id_path=PackedInt32Array(434719897) index="0" unique_id=940050338 instance=ExtResource("3_tna0j")]
