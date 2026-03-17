@@ -4,19 +4,7 @@
 [ext_resource type="Script" uid="uid://cd68rh5xhn4fq" path="res://demo/old_demo/fade_transition.gd" id="2_7si18"]
 [ext_resource type="Script" uid="uid://dtgvuhau8s048" path="res://demo/old_demo/simple_pause_screen.gd" id="2_tna0j"]
 [ext_resource type="Script" uid="uid://dllkim51eebfk" path="res://demo/old_demo/demo_counter.gd" id="3_vc6ln"]
-[ext_resource type="Script" uid="uid://ds6hqtap7lyco" path="res://addons/game_state_manager/scripts/basic_pause_control.gd" id="4_o2r6y"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fehbo"]
-bg_color = Color(0, 0, 0, 0.6117647)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+[ext_resource type="PackedScene" uid="uid://dnn44fhykt36d" path="res://addons/game_state_manager/scenes/basic_pause.tscn" id="4_o2r6y"]
 
 [node name="GameManagment" unique_id=894940207 instance=ExtResource("1_u32w6")]
 initial_scene = "res://demo/scene1.tscn"
@@ -66,61 +54,7 @@ offset_bottom = 280.0
 text = "0"
 script = ExtResource("3_vc6ln")
 
-[node name="BasicPause" type="Node" parent="Pause" parent_id_path=PackedInt32Array(1127102330) index="1" unique_id=1367270181]
-script = ExtResource("4_o2r6y")
-
-[node name="Control" type="Control" parent="Pause/BasicPause" index="0" unique_id=1726877560]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_lock_ = true
-
-[node name="Panel" type="Panel" parent="Pause/BasicPause/Control" index="0" unique_id=323644094]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -80.0
-offset_right = 200.0
-offset_bottom = 80.00037
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_fehbo")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Pause/BasicPause/Control/Panel" index="0" unique_id=74223538]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = -10.0
-offset_bottom = -10.0
-
-[node name="Label" type="Label" parent="Pause/BasicPause/Control/Panel/VBoxContainer" index="0" unique_id=1674488217]
-layout_mode = 2
-text = "Paused"
-horizontal_alignment = 1
-
-[node name="HSeparator" type="HSeparator" parent="Pause/BasicPause/Control/Panel/VBoxContainer" index="1" unique_id=1001862048]
-layout_mode = 2
-
-[node name="Resume" type="Button" parent="Pause/BasicPause/Control/Panel/VBoxContainer" index="2" unique_id=2081766796]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-text = "Resume"
-
-[node name="Quit" type="Button" parent="Pause/BasicPause/Control/Panel/VBoxContainer" index="3" unique_id=1314451424]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-text = "Quit"
+[node name="BasicPause" parent="Pause" parent_id_path=PackedInt32Array(1127102330) index="1" unique_id=1019686895 instance=ExtResource("4_o2r6y")]
 
 [node name="FadeTransition" type="Control" parent="Transitions" parent_id_path=PackedInt32Array(434719897) index="0" unique_id=234796323]
 layout_mode = 3
@@ -143,5 +77,3 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="Pause/SimplePause/Control/ColorRect/Button" to="Pause/SimplePause" method="on_resume_clicked"]
-[connection signal="pressed" from="Pause/BasicPause/Control/Panel/VBoxContainer/Resume" to="Pause/BasicPause" method="_on_resume_pressed"]
-[connection signal="pressed" from="Pause/BasicPause/Control/Panel/VBoxContainer/Quit" to="Pause/BasicPause" method="_on_quit_pressed"]
