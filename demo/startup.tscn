@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://c7x0epbdikeo3"]
 
 [ext_resource type="PackedScene" uid="uid://883nr4ru12h6" path="res://addons/game_state_manager/scenes/game_management.tscn" id="1_u32w6"]
-[ext_resource type="Script" uid="uid://cd68rh5xhn4fq" path="res://demo/fade_transition.gd" id="2_7si18"]
-[ext_resource type="Script" uid="uid://dtgvuhau8s048" path="res://demo/simple_pause_screen.gd" id="2_tna0j"]
-[ext_resource type="Script" uid="uid://dllkim51eebfk" path="res://demo/demo_counter.gd" id="3_vc6ln"]
+[ext_resource type="Script" uid="uid://cd68rh5xhn4fq" path="res://demo/old_demo/fade_transition.gd" id="2_7si18"]
+[ext_resource type="Script" uid="uid://dtgvuhau8s048" path="res://demo/old_demo/simple_pause_screen.gd" id="2_tna0j"]
+[ext_resource type="Script" uid="uid://dllkim51eebfk" path="res://demo/old_demo/demo_counter.gd" id="3_vc6ln"]
 
 [node name="GameManagment" unique_id=894940207 instance=ExtResource("1_u32w6")]
-initial_scene = "res://demo/menu.tscn"
+initial_scene = "res://demo/scene1.tscn"
 
 [node name="SimplePause" type="Node" parent="Pause" parent_id_path=PackedInt32Array(1127102330) index="0" unique_id=826419580]
 script = ExtResource("2_tna0j")
