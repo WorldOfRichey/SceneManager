@@ -10,3 +10,4 @@ initial_scene = "res://demo/scene1.tscn"
 [node name="BasicPause" parent="Pause" parent_id_path=PackedInt32Array(1127102330) index="0" unique_id=1019686895 instance=ExtResource("4_o2r6y")]
 
 [node name="FadeTransition" parent="Transitions" parent_id_path=PackedInt32Array(434719897) index="0" unique_id=940050338 instance=ExtResource("3_tna0j")]
+transition_speed_out = 0.1
