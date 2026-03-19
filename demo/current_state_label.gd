@@ -1,5 +1,5 @@
 extends Label
-#This label observes GameManager.current_state changes
+#This label observes StateManager.current_state changes
 
 func _ready():
 	SceneManager.signal_on_scene_manager_state_changed.connect(on_state_change)
