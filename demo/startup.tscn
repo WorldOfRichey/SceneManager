@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://c7x0epbdikeo3"]
 
-[ext_resource type="PackedScene" uid="uid://883nr4ru12h6" path="res://addons/game_state_manager/scenes/game_management.tscn" id="1_u32w6"]
-[ext_resource type="PackedScene" uid="uid://diiifxcm6w1jt" path="res://addons/game_state_manager/scenes/fade_transition.tscn" id="3_tna0j"]
-[ext_resource type="PackedScene" uid="uid://dnn44fhykt36d" path="res://addons/game_state_manager/scenes/basic_pause.tscn" id="4_o2r6y"]
+[ext_resource type="PackedScene" uid="uid://883nr4ru12h6" path="res://addons/scene_manager/scenes/scene_management.tscn" id="1_u32w6"]
+[ext_resource type="PackedScene" uid="uid://diiifxcm6w1jt" path="res://addons/scene_manager/scenes/fade_transition.tscn" id="3_tna0j"]
+[ext_resource type="PackedScene" uid="uid://dnn44fhykt36d" path="res://addons/scene_manager/scenes/basic_pause.tscn" id="4_o2r6y"]
 
-[node name="GameManagment" unique_id=894940207 instance=ExtResource("1_u32w6")]
+[node name="SceneManagment" unique_id=894940207 instance=ExtResource("1_u32w6")]
 initial_scene = "res://demo/scene1.tscn"
 
 [node name="BasicPause" parent="Pause" parent_id_path=PackedInt32Array(1127102330) index="0" unique_id=1019686895 instance=ExtResource("4_o2r6y")]

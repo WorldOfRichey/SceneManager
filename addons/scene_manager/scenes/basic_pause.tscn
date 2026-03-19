@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dnn44fhykt36d"]
 
-[ext_resource type="Script" uid="uid://ds6hqtap7lyco" path="res://addons/game_state_manager/scripts/basic_pause_control.gd" id="1_dnf5k"]
-[ext_resource type="StyleBox" uid="uid://cgakt7eiwqby1" path="res://addons/game_state_manager/resources/button_normal.tres" id="2_4tetd"]
-[ext_resource type="StyleBox" uid="uid://tat8sl4jwosi" path="res://addons/game_state_manager/resources/button_pressed.tres" id="3_1gp38"]
-[ext_resource type="StyleBox" uid="uid://ciinnaq2vuvx5" path="res://addons/game_state_manager/resources/button_hover.tres" id="4_e5cwf"]
+[ext_resource type="Script" uid="uid://ds6hqtap7lyco" path="res://addons/scene_manager/scripts/basic_pause_control.gd" id="1_dnf5k"]
+[ext_resource type="StyleBox" uid="uid://cgakt7eiwqby1" path="res://addons/scene_manager/resources/button_normal.tres" id="2_4tetd"]
+[ext_resource type="StyleBox" uid="uid://tat8sl4jwosi" path="res://addons/scene_manager/resources/button_pressed.tres" id="3_1gp38"]
+[ext_resource type="StyleBox" uid="uid://ciinnaq2vuvx5" path="res://addons/scene_manager/resources/button_hover.tres" id="4_e5cwf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fehbo"]
 bg_color = Color(0, 0, 0, 0.6117647)

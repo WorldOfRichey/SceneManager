@@ -6,7 +6,6 @@ func _ready() -> void:
 	
 func load_initial_scene_defered() -> void :
 	#Load the first scene
-	GameManager.scene_loader.load_scene_quick(GameManager.game_manager_settings.initial_scene)
-	
+	SceneManager.scene_loader.load_scene_quick(SceneManager.scene_manager_settings.initial_scene)
 	#Self distruct
 	self.queue_free()
