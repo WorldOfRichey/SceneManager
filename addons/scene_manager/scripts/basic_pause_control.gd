@@ -24,7 +24,7 @@ func _hide_pause_screen() -> void:
 	control.visible = false
 
 func _on_resume_pressed():
-	GameManager.resume_game()
+	SceneManager.resume_game()
 
 func _on_quit_pressed():
-	GameManager.quit_game()
+	SceneManager.quit_game()

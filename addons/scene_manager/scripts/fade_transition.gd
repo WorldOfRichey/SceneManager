@@ -12,7 +12,7 @@ func scene_loaded_update(percentage : float ) -> void :
 	print (percentage)
 
 func _trigger_transition_in() -> void:
-	GameManager.scene_loader.signal_scene_loading.connect(scene_loaded_update)
+	SceneManager.scene_loader.signal_scene_loading.connect(scene_loaded_update)
 	color_rect.color = Color(transition_color.r,transition_color.g,transition_color.b,0)
 	color_rect.visible = true
 	tween = create_tween()
@@ -39,4 +39,4 @@ func trigger_transition_out_complete() -> void :
 	tween = null
 	color_rect.visible = false
 	self.signal_out_transition_ended.emit()
-	GameManager.scene_loader.signal_scene_loading.disconnect(scene_loaded_update)
+	SceneManager.scene_loader.signal_scene_loading.disconnect(scene_loaded_update)

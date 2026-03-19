@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://diiifxcm6w1jt"]
 
-[ext_resource type="Script" uid="uid://bjl4pu7yn0nhm" path="res://addons/game_state_manager/scripts/fade_transition.gd" id="1_fuclg"]
+[ext_resource type="Script" uid="uid://bjl4pu7yn0nhm" path="res://addons/scene_manager/scripts/fade_transition.gd" id="1_fuclg"]
 
 [node name="FadeTransition" type="Control" unique_id=940050338]
 layout_mode = 3
