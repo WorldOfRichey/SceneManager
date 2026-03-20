@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="GameStateManager"
+config/name="SceneManager"
+config/description="A test project for the SceneManager addon"
 run/main_scene="uid://c7x0epbdikeo3"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -21,7 +22,7 @@ SceneManager="*uid://vr5gg64dhnw0"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/game_state_manager/plugin.cfg")
+enabled=PackedStringArray()
 
 [physics]
 
